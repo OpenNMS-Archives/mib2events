@@ -4,7 +4,7 @@
   <artifactId>mib2events</artifactId>
   <packaging>jar</packaging>
   <name>mib2events</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
