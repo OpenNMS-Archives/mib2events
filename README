@@ -1,2 +1,26 @@
-Within the current directory, run "java -jar lib/mib2events.jar --help" for
-usage information.
+BUILDING RPMs
+-------------
+
+You should be able to build the mib2events binary tarball directly:
+
+  rpmbuild -tb mib2events*.tar.gz
+
+BUILDING DEBs
+-------------
+
+Since this is a such a simple package, we have provided an "equivs" control
+file.  Just run:
+
+  apt-get install equivs
+  equivs-build mib2events.equivs
+
+RUNNING
+-------
+
+If you are running the binary distribution directly, just run:
+
+  java -jar lib/mib2events.jar --help
+
+If you are using RPM or Debian packages, there should be a "mib2events" script
+in /usr/bin that works the same way.
+

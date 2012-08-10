@@ -1,0 +1,28 @@
+### Commented entries have reasonable defaults.
+### Uncomment to edit them.
+Section: contrib/net
+Priority: optional
+# Homepage: <enter URL here; no default>
+Standards-Version: 3.6.2
+
+Package: mib2events
+Version: 1.0.0
+Maintainer: Benjamin Reed <ranger@opennms.org>
+# Pre-Depends: <comma-separated list of packages>
+Depends: java6-runtime-headless
+# Recommends: <comma-separated list of packages>
+Suggests: java6-runtime
+# Provides: <comma-separated list of packages>
+# Replaces: <comma-separated list of packages>
+Architecture: all
+Copyright: LICENSE
+# Changelog: <changelog file; defaults to a generic changelog>
+Readme: README
+# Extra-Files: <comma-separated list of additional files for the doc directory>
+Files: lib/mib2events.jar /usr/share/java/mib2events.jar
+File: /usr/bin/mib2events 0755
+ #!/bin/sh
+ java -jar /usr/share/java/mib2events.jar "$@"
+Description: Create OpenNMS configuration from MIB files
+ A tool to create OpenNMS event XML configuration from
+ BER MIB text files.
