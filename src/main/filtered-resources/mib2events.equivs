@@ -6,7 +6,7 @@ Priority: optional
 Standards-Version: 3.6.2
 
 Package: mib2events
-Version: 1.0.0
+Version: ${project.version}-1
 Maintainer: Benjamin Reed <ranger@opennms.org>
 # Pre-Depends: <comma-separated list of packages>
 Depends: java6-runtime-headless
