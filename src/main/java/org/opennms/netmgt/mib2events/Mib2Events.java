@@ -16,9 +16,9 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.SortedMap;
 import java.util.TreeMap;
-import java.util.Map.Entry;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -134,19 +134,24 @@ public class Mib2Events {
     public String getMibLocation() {
         return m_mibLocation;
     }
-
+    
     public void convert() throws IOException, MibLoaderException {
+        convert(m_mibLocation);
+    }
+
+    public void convert(final String mibLocation) throws IOException, MibLoaderException {
+
         m_loader = new MibLoader();
 
         URL url;
         try {
-            url = new URL(m_mibLocation);
+            url = new URL(mibLocation);
         } catch (MalformedURLException e) {
             url = null;
         }
 
         if (url == null) {
-            File file = new File(m_mibLocation);
+            File file = new File(mibLocation);
             m_loader.addDir(file.getParentFile());
             m_mib = m_loader.load(file);
         } else {
@@ -154,7 +159,7 @@ public class Mib2Events {
         }
     }
 
-    private void printEvents(PrintStream out) throws MarshalException, ValidationException, ParserConfigurationException, SAXException, IOException {
+    void printEvents(PrintStream out) throws MarshalException, ValidationException, ParserConfigurationException, SAXException, IOException {
         if (m_loader == null) {
             throw new IllegalStateException("convert() must be called first");
         }

@@ -4,7 +4,7 @@
   <artifactId>mib2events</artifactId>
   <packaging>jar</packaging>
   <name>mib2events</name>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -18,6 +18,13 @@
       <artifactId>opennms-config</artifactId>
       <scope>compile</scope>
       <version>1.10.4</version>
+      <!-- we only need opennms-config for the eventconf XML, this stops us from pulling in a billion other things -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.opennms.dependencies</groupId>
+          <artifactId>spring-dependencies</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>net.percederberg.mibble</groupId>
@@ -36,12 +43,6 @@
       <artifactId>xercesImpl</artifactId>
       <version>2.10.0</version>
       <scope>compile</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>xml-apis</groupId>
-          <artifactId>xml-apis</artifactId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <dependency>
       <groupId>commons-logging</groupId>
