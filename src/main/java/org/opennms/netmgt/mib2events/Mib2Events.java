@@ -69,7 +69,7 @@ public class Mib2Events {
     
     private static final String ME = "mib2events";
     
-	private static final String INVOCATION = "java -jar lib/mib2events.jar";
+	private static final String INVOCATION = "java -jar mib2events.jar";
     
     private static final String OPTION_HELP =
         "  -u, --ueibase=UEIBASE  The base UEI for resulting event definitions\n" +

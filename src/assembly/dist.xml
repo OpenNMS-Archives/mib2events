@@ -10,20 +10,17 @@
         <include>LICENSE*</include>
       </includes>
     </fileSet>
+    <fileSet>
+      <directory>src/main/filtered-resources</directory>
+      <outputDirectory>/</outputDirectory>
+      <filtered>true</filtered>
+    </fileSet>
   </fileSets>
-  <dependencySets>
-    <dependencySet>
-       <outputFileNameMapping>mib2events.jar</outputFileNameMapping>
-       <outputDirectory>lib</outputDirectory>
-       <includes>
-         <include>org.opennms.netmgt.mib2events:mib2events</include>
-       </includes>
-    </dependencySet>
-    <dependencySet>
+  <files>
+    <file>
+      <source>target/mib2events-${project.version}.one-jar.jar</source>
       <outputDirectory>lib</outputDirectory>
-      <excludes>
-        <exclude>org.opennms.netmgt.mib2events:mib2events</exclude>
-      </excludes>
-    </dependencySet>
-  </dependencySets>
+      <destName>mib2events.jar</destName>
+    </file>
+  </files>
 </assembly>
